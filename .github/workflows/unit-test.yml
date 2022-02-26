@@ -39,7 +39,7 @@ jobs:
         uses: codecov/codecov-action@v2
       - name: Production Build
         run: |
-          CI=false yarn prod:build
+          CI=false yarn build:prod
       - name: if fail
         uses: actions/github-script@v5.1.0
         with:
