@@ -15,6 +15,8 @@ Minimum setting for VanillaJS, HTML webpage
 - Minimization(Image, HTML, CSS, JS) on production
 - `gh-pages` Deployment 
 
+[Deployed Link](https://eunchurn.github.io/vanillajs-typescript-webpack-project-boilerplate/)
+
 ## For test (Apple Silicon M1 arm64)
 
 ```
