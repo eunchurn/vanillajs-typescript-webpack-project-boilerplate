@@ -1,6 +1,6 @@
-# Simple VanillaJS Typescript Gulp Project Boilerplate
+# Simple VanillaJS Typescript Webpack Project Boilerplate
 
-[![Unit Test](https://github.com/eunchurn/vanillajs-typescript-gulp-project-boilerplate/actions/workflows/unit-test.yml/badge.svg)](https://github.com/eunchurn/vanillajs-typescript-gulp-project-boilerplate/actions/workflows/unit-test.yml)
+[![Unit Test](https://github.com/eunchurn/vanillajs-typescript-webpack-project-boilerplate/actions/workflows/unit-test.yml/badge.svg)](https://github.com/eunchurn/vanillajs-typescript-webpack-project-boilerplate/actions/workflows/unit-test.yml)
 
 Minimum setting for VanillaJS, HTML webpage 
 **required NodeJS version over 12.x**
