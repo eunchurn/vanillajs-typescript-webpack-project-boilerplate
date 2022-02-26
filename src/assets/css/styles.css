@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+}
+.heading {
+  font-size: 3rem;
+}
+.section-1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
