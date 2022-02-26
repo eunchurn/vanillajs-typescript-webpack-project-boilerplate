@@ -1,0 +1,60 @@
+name: Deploy
+on:
+  push:
+    branches: [deploy]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        run: |
+          yarn
+      - name: Type Check
+        run: |
+          yarn typecheck
+      - name: Unit Test
+        run: |
+          yarn test
+      - name: Collecting Code Coverage
+        uses: codecov/codecov-action@v2
+      - name: Production Build
+        run: |
+          CI=false yarn build:prod
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+      - name: if fail
+        uses: actions/github-script@v5.1.0
+        with:
+          github-token: ${{github.token}}
+          script: |
+            const ref = "${{github.ref}}"
+            const pull_number = Number(ref.split("/")[2])
+            await github.pulls.createReview({
+              ...context.repo,
+              pull_number,
+              body: "Check your test",
+              event: "REQUEST_CHANGES"
+            })
+        if: failure()
