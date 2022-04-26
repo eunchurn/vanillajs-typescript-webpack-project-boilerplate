@@ -29,7 +29,7 @@
     "@types/jest": "27.4.1",
     "@types/jsdom": "16.2.14",
     "@types/node": "17.0.21",
-    "@types/svgo": "2.6.2",
+    "@types/svgo": "2.6.3",
     "browser-sync": "2.27.8",
     "browser-sync-webpack-plugin": "2.3.0",
     "canvas": "2.9.0",
