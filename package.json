@@ -24,7 +24,7 @@
   },
   "homepage": "https://eunchurn.github.io/vanillajs-typescript-webpack-project-boilerplate",
   "devDependencies": {
-    "@jest/types": "28.0.2",
+    "@jest/types": "28.1.0",
     "@types/browser-sync-webpack-plugin": "2.2.2",
     "@types/jest": "27.5.0",
     "@types/jsdom": "16.2.14",
@@ -44,7 +44,7 @@
     "imagemin-jpegtran": "7.0.0",
     "imagemin-optipng": "8.0.0",
     "imagemin-svgo": "10.0.1",
-    "jest": "28.0.3",
+    "jest": "28.1.0",
     "jest-canvas-mock": "2.4.0",
     "jsdom": "19.0.0",
     "mini-css-extract-plugin": "2.6.0",
