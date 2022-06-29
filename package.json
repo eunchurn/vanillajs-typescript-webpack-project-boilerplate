@@ -44,7 +44,7 @@
     "imagemin-jpegtran": "7.0.0",
     "imagemin-optipng": "8.0.0",
     "imagemin-svgo": "10.0.1",
-    "jest": "28.1.1",
+    "jest": "28.1.2",
     "jest-canvas-mock": "2.4.0",
     "jsdom": "19.0.0",
     "mini-css-extract-plugin": "2.6.1",
