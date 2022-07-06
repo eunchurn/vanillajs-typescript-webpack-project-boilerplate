@@ -51,7 +51,7 @@
     "postcss-loader": "6.2.1",
     "prettier": "2.7.1",
     "rimraf": "3.0.2",
-    "serve": "13.0.2",
+    "serve": "13.0.4",
     "ts-jest": "28.0.5",
     "ts-loader": "9.3.1",
     "ts-node": "10.8.2",
