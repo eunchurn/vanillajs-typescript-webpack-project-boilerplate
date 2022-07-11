@@ -48,7 +48,7 @@
     "jest-canvas-mock": "2.4.0",
     "jsdom": "19.0.0",
     "mini-css-extract-plugin": "2.6.1",
-    "postcss-loader": "6.2.1",
+    "postcss-loader": "7.0.1",
     "prettier": "2.7.1",
     "rimraf": "3.0.2",
     "serve": "13.0.4",
