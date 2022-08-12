@@ -48,7 +48,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
       - name: if fail
-        uses: actions/github-script@v6.1.0
+        uses: actions/github-script@v6.1.1
         with:
           github-token: ${{github.token}}
           script: |
