@@ -6,22 +6,12 @@ exports[`app should match snapshot 1`] = `
     
   <header
     class="heading"
-  >
-    Heading
-  </header>
+  />
   
     
   <section
     class="section-1"
-  >
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ex alias tempore recusandae maxime, illo eum cumque reprehenderit minima molestias qui sequi iste consectetur dolores ducimus ab neque, provident possimus.
-    </p>
-    <canvas
-      height="600"
-      width="450"
-    />
-  </section>
+  />
   
     
   <script

@@ -23,6 +23,7 @@ const config: Config.InitialOptions = {
   },
   globalSetup: "./jest/global-setup.ts",
   verbose: true,
+  testEnvironment: "jsdom",
 };
 
 export default config;

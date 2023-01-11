@@ -1,40 +1,27 @@
 import { $$ } from "./selector";
 
-interface Content {
+interface Props {
   className: string;
   title: string;
   content: string;
 }
-export function init(content: Content[]) {
-  // First content
-  const [first] = content;
-  const headingArr = $$(first.className, document);
-  const heading = document.querySelectorAll(first.className);
-  console.log("Selector Array:", headingArr, "Selector NodeList", heading);
-  // Second content
-  const [, second] = content;
-  const section1 = document.querySelector(second.className);
-  if (heading) {
-    heading[0].innerHTML = first.title;
-  }
-  if (section1) {
-    const parag = document.createElement("p");
-    parag.innerHTML = second.content;
-    section1.appendChild(parag);
-  }
-  // Canvas
-  const [, , third] = content;
+export function init(props: Props) {
+  const { className, title, content } = props;
+  const main = document.querySelector(className);
+  const height = window.innerHeight * 0.65;
+  const width = height * 0.75;
   const canvas = document.createElement("canvas") as HTMLCanvasElement;
-  Object.assign(canvas, { width: 450, height: 600 });
-  if (section1) {
-    section1.appendChild(canvas);
+  Object.assign(canvas, { width, height });
+  if (main) {
+    main.appendChild(canvas);
   }
   const img = new Image();
-  img.src = third.content;
+  img.src = content;
   const context = canvas.getContext("2d");
+
   if (context) {
     img.onload = function () {
-      context.drawImage(img, 0, 0, 450, 600);
+      context.drawImage(img, 0, 0, width, height);
       console.log("drawn");
     };
   }
