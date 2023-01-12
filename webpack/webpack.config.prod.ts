@@ -50,7 +50,7 @@ const prod: Configuration = {
       hash: true,
       filename: "index.html",
       chunks: ["main"],
-      template: `./${baseDirectory}/assets/html/index.html`,
+      template: "public/index.html",
       minify: true,
     }),
     new MiniCssExtractPlugin({
