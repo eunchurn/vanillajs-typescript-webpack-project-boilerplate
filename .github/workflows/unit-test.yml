@@ -14,35 +14,53 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package-lock.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/pnpm-lock.yaml" ]; then
+            echo "manager=pnpm" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=pnpm" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine packager manager"
+            exit 1
+          fi
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Restore cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/pnpm-lock.yaml') }}-
       - name: Install dependencies
-        run: |
-          yarn
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Type Check
-        run: |
-          yarn typecheck
-      - name: Unit Test
-        run: |
-          yarn test
+        run: ${{ steps.detect-package-manager.outputs.manager }} typecheck
+      - name: Unit test
+        run: ${{ steps.detect-package-manager.outputs.manager }} test
+      - name: Build
+        env:
+          CI: false
+        run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Collecting Code Coverage
         uses: codecov/codecov-action@v3
-      - name: Production Build
-        run: |
-          CI=false yarn build:prod
-      - name: if fail
-        uses: actions/github-script@v6.3.3
-        with:
-          github-token: ${{github.token}}
-          script: |
-            const ref = "${{github.ref}}"
-            const pull_number = Number(ref.split("/")[2])
-            await github.pulls.createReview({
-              ...context.repo,
-              pull_number,
-              body: "Check your test",
-              event: "REQUEST_CHANGES"
-            })
-        if: failure()
