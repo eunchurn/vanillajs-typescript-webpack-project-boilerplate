@@ -12,7 +12,7 @@ export const config: Configuration = {
   output: {
     path: path.resolve(__dirname, "../dist"),
     filename: "[name].bundle.js",
-    // publicPath: "/vanillajs-typescript-webpack-project-boilerplate/", // change to your github repo project name
+    publicPath: "/vanillajs-typescript-webpack-project-boilerplate/", // change to your github repo project name
   },
   target: "web",
   node: {
