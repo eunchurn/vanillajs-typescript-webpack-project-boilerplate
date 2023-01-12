@@ -31,7 +31,7 @@
     "@jest/types": "29.3.1",
     "@types/browser-sync-webpack-plugin": "2.2.2",
     "@types/jest": "29.2.5",
-    "@types/jsdom": "16.2.15",
+    "@types/jsdom": "20.0.1",
     "@types/node": "18.11.18",
     "@types/svgo": "2.6.4",
     "browser-sync": "2.27.11",
