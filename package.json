@@ -34,7 +34,7 @@
     "@types/jsdom": "20.0.1",
     "@types/node": "18.15.5",
     "@types/svgo": "2.6.4",
-    "browser-sync": "2.29.0",
+    "browser-sync": "2.29.1",
     "browser-sync-webpack-plugin": "2.3.0",
     "canvas": "2.11.0",
     "css-loader": "6.7.3",
