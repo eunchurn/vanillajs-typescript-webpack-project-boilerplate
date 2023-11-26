@@ -934,10 +934,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/browser-sync-webpack-plugin@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@types/browser-sync-webpack-plugin/-/browser-sync-webpack-plugin-2.2.2.tgz#9ce247e84262938ccdae18141b4cfe295aedc2e1"
-  integrity sha512-1pHfor81AqnWUEl/EqSL8c0+QLdJSm2Y4IFpg//nL753KWdHrj3XUTLusfL/VAjctrJqZaSmIoV/esbYM5cJSQ==
+"@types/browser-sync-webpack-plugin@2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@types/browser-sync-webpack-plugin/-/browser-sync-webpack-plugin-2.2.5.tgz#3374fb018c3b853b2b445e25b01b78a476ddae4e"
+  integrity sha512-7sZy5lBdxH7nJWbY2zcrMZj43emATUsGp6uhcO98TNG2qhJSNI6b2BlHdgIlBKJq/GY1Prp448GFzsu6qy88AQ==
   dependencies:
     "@types/browser-sync" "*"
     "@types/webpack" "^4"

@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@jest/types": "29.6.1",
-    "@types/browser-sync-webpack-plugin": "2.2.2",
+    "@types/browser-sync-webpack-plugin": "2.2.5",
     "@types/jest": "29.5.3",
     "@types/jsdom": "20.0.1",
     "@types/node": "18.17.5",
