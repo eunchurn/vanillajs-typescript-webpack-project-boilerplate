@@ -37,7 +37,7 @@
     "browser-sync": "2.29.3",
     "browser-sync-webpack-plugin": "2.3.0",
     "canvas": "2.11.2",
-    "css-loader": "6.8.1",
+    "css-loader": "6.9.0",
     "css-minimizer-webpack-plugin": "4.2.2",
     "file-loader": "6.2.0",
     "gh-pages": "4.0.0",
