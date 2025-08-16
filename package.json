@@ -35,7 +35,7 @@
     "@types/node": "18.19.123",
     "@types/svgo": "2.6.4",
     "browser-sync": "2.29.3",
-    "browser-sync-webpack-plugin": "2.3.0",
+    "browser-sync-webpack-plugin": "2.4.0",
     "canvas": "2.11.2",
     "css-loader": "6.11.0",
     "css-minimizer-webpack-plugin": "4.2.2",
