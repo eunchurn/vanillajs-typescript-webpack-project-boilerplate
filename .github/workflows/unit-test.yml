@@ -63,4 +63,4 @@ jobs:
           CI: false
         run: ${{ steps.detect-package-manager.outputs.runner }} build
       - name: Collecting Code Coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
