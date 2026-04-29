@@ -33,7 +33,7 @@
     "@types/jest": "29.5.14",
     "@types/jsdom": "20.0.1",
     "@types/node": "18.19.130",
-    "@types/svgo": "2.6.4",
+    "@types/svgo": "3.0.0",
     "browser-sync": "2.29.3",
     "browser-sync-webpack-plugin": "2.4.0",
     "canvas": "2.11.2",
